@@ -1,0 +1,273 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+@import url("https://use.fontawesome.com/releases/v5.2.0/css/all.css");
+@keyframes fading {
+  0% {
+    opacity: 0;
+  }
+  15%, 85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 16px;
+  background-color: #eee;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+form.search {
+  margin: 0;
+  padding: 18px 0;
+  text-decoration: none;
+  position: relative;
+}
+form.search:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #aaa;
+  content: "";
+  display: inline-block;
+  height: 2.75em;
+  width: 2.5em;
+  line-height: 2.75em;
+  position: absolute;
+  text-align: center;
+}
+form.search input {
+  height: 40px;
+  width: 220px;
+  font-size: 14px;
+  background-color: #f8f8f8;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  border-radius: 2px;
+}
+form.search input:focus {
+  border: 2px solid #63c6ae;
+}
+form.search input:first-child {
+  padding-left: 2.5em;
+}
+
+header {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
+}
+header button {
+  float: right;
+  margin: 25px;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.top-bar {
+  box-shadow: 0px 2px 5px #242a2c;
+}
+
+.logo {
+  text-decoration: none;
+  display: block;
+  float: left;
+  margin: 4px;
+}
+.logo div {
+  background: url("../images/logo.svg") no-repeat;
+  background-size: 100px 80px;
+  height: 80px;
+  width: 100px;
+}
+
+.top-menu {
+  clear: left;
+  transition: max-height 1s;
+}
+.top-menu li {
+  list-style: none;
+  background-color: #242a2c;
+  text-align: center;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+.top-menu a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #586165;
+  display: block;
+  padding: 31px 0;
+  transition: 0.8s ease;
+}
+.top-menu a:hover {
+  color: #63c6ae;
+}
+
+.container {
+  max-width: 1280px;
+  padding-top: 88px;
+  margin: auto;
+}
+
+.slide {
+  display: block;
+  z-index: 1;
+}
+.slide img {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.animate-fading {
+  animation: fading 15s infinite;
+}
+
+.main {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+}
+.main figure {
+  margin: 0;
+}
+.main img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+}
+
+.aside-bar {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}
+footer .social-medias {
+  font-size: 26px;
+  background-color: #242a2c;
+}
+footer .social-medias li, footer .social-medias a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  color: #aaa;
+  transition: color 0.5s;
+}
+footer .social-medias li:hover, footer .social-medias a:hover {
+  color: white;
+}
+footer .footer-info {
+  font-size: 14px;
+  width: 100%;
+  height: 160px;
+  background-color: black;
+  color: white;
+  line-height: 0.5em;
+  padding: 20px 0;
+}
+footer .footer-info a {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-info a:hover {
+  color: #63c6ae;
+}
+
+@media screen and (min-width: 900px) {
+  .top-bar {
+    height: 88px;
+    width: 100%;
+    box-shadow: 0px 2px 5px #242a2c;
+  }
+
+  .btn-menu {
+    display: none;
+  }
+
+  .icon-button {
+    margin-left: 20px;
+  }
+
+  .top-menu {
+    position: absolute;
+    margin-left: 160px;
+    float: left;
+    width: 75%;
+    clear: none;
+    max-width: 900px;
+  }
+  .top-menu ul {
+    display: flex;
+    justify-content: space-around;
+  }
+  .top-menu li {
+    border-bottom: none;
+    flex-grow: 1;
+    padding: 4px;
+    background-color: white;
+  }
+  .top-menu a {
+    background-color: white;
+  }
+
+  .top-search {
+    display: none;
+  }
+
+  .slide {
+    grid-area: slide;
+  }
+
+  .main {
+    grid-area: main;
+    margin: 0;
+  }
+
+  .aside-bar {
+    height: 220px;
+    display: block;
+    background-color: white;
+    grid-area: menu;
+    padding: 20px 20px 20px 36px;
+  }
+  .aside-bar li {
+    margin-bottom: 5px;
+  }
+  .aside-bar a {
+    text-decoration: none;
+    line-height: 2em;
+    color: #586165;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    transition: color 0.5s;
+  }
+  .aside-bar a:hover {
+    color: #63c6ae;
+  }
+
+  .container {
+    display: grid;
+    grid-template-areas: "slide slide slide slide slide slide" "main main main main menu menu";
+    grid-gap: 10px;
+  }
+
+  footer {
+    margin-top: 20px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
